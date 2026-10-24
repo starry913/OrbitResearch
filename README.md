@@ -1,6 +1,6 @@
 <div align="center">
 
-# Orbit · Orbit+
+# OrbitResearch
 
 **从文献证据到研究假设，从批判性讨论到实验计划。**
 
@@ -112,8 +112,8 @@ Orbit 问答默认检索 5 个片段，选定文献时检索 10 个片段；Orbi
 ### 1. 获取代码并安装后端依赖
 
 ```bash
-git clone https://github.com/starry913/my_research_agent.git
-cd my_research_agent
+git clone https://github.com/starry913/OrbitResearch.git
+cd OrbitResearch
 
 python3 -m venv .venv
 source .venv/bin/activate
@@ -181,7 +181,7 @@ npm run dev
 ## 项目结构
 
 ```text
-my_research_agent/
+OrbitResearch/
 ├── README.md
 ├── docs/images/                  # README 截图与工作流图
 ├── backend/
