@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Orbit Web Interface
 
-## Getting Started
+Orbit 的 Next.js 前端，包含文献问答工作台与 Orbit+ 多智能体协作界面。
 
-First, run the development server:
+项目介绍、界面展示、系统设计及完整启动步骤见 [项目 README](../README.md)。
+
+## 本地开发
+
+在本目录执行：
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Orbit：<http://localhost:3000>
+- Orbit+：<http://localhost:3000/orbit-plus>
+- 后端默认地址：`http://localhost:8000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+请先按照根目录 README 配置并启动后端。两个页面中的 `API_BASE` 需要与后端地址保持一致。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 主要文件
 
-## Learn More
+| 文件 | 职责 |
+| --- | --- |
+| `app/page.tsx` | 文献管理、检索问答、引用展示 |
+| `app/orbit-plus/page.tsx` | 模型与角色配置、独立对话状态、自动交互编排 |
+| `app/components/` | 共享界面组件 |
+| `app/globals.css` | 全局样式 |
 
-To learn more about Next.js, take a look at the following resources:
+## 开发命令
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run lint   # 静态检查
+npm run build  # 生产构建
+npm run start  # 运行已构建的前端
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+当前 Orbit+ 对话状态保存在页面内存中，刷新会清空。模型凭据由后端读取，不应写入前端代码。
