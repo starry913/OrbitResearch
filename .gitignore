@@ -1,0 +1,40 @@
+# Python environments and caches
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# JavaScript dependencies and build output
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+.claude/
+.codex
+
+# Uploaded documents and local databases
+data/
+chroma_db/
+*.sqlite
+*.sqlite3
+
+# Local sync inventories and generated output
+.backup_sync_files*.txt
+.main_sync_files*.txt
+/output/
+/output\\*
+*.log
+.DS_Store
